@@ -1,11 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   devServer: {
     static: './dist',
+    hot: false, // Optional, but you must not set both hot and liveReload to true
+    liveReload: true,
   },
   devtool: 'inline-source-map',
   plugins: [
